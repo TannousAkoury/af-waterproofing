@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | AF Waterproofing</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a class="logo" href="#">
+            <img src="./assets/aflogo.jpeg" alt="" class="logo-img">
+            <span>AF Waterproofing</span>
+        </a>
+        <!-- <a class="logo" href="#"><span class="logo-mark">AF</span><span>AF Waterproofing</span></a> -->
+        <button class="menu-btn">☰</button>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="Process.html">Process</a>
+            <a href="#projects">Projects</a>
+            <a href="contact.html">Contact Us</a>
+            <!-- <a class="quote-btn" href="#contact">Get A Quote</a> -->
+        </nav>
+    </header>
+
+<!-- <section class="about-page-hero">
+  <div class="about-center">
+    <span class="kicker">About AF Waterproofing</span>
+
+    <h1>Waterproofing solutions built to stop the source of the problem.</h1>
+
+    <p>
+      We help protect homes, buildings, terraces and concrete structures with professional waterproofing systems designed for long-term protection.
+    </p>
+  </div>
+</section> -->
+
+<section class="about-luxury">
+  <div class="about-box">
+    <div class="kicker" style="display: flex;justify-content: center;font-size: 20px;padding: 18px;">Who We Are</div>
+
+    <!-- <h4 class="title">
+      We do not only cover leaks. We find where the water is coming from.
+    </h4> -->
+
+    <p class="lead">
+      Water damage often returns when the repair only covers the visible surface. Our approach is to locate the real water path, repair cracks and joints, then protect the surface with the correct waterproofing system.
+    </p>
+
+    <p class="lead">
+      We handle residential and commercial projects including roofs, terraces, balconies, concrete slabs, damp walls and wet areas.
+    </p>
+
+    <div class="about-features">
+      <div>✓ Source-based leak diagnosis</div>
+      <div>✓ Professional application and clean finishing</div>
+      <div>✓ Waterproofing for interior and exterior surfaces</div>
+      <div>✓ Solutions for homes, buildings and commercial spaces</div>
+    </div>
+  </div>
+</section>
+
+<section class="about-process-luxury">
+  <div class="section-head">
+    <div class="kicker"  style="display: flex;justify-content: center;font-size: 20px;padding: 18px;">Our Approach</div>
+    <!-- <h2 class="title">A precise process for lasting protection</h2> -->
+    <p class="lead">
+      Every project starts with identifying the source before applying the right solution.
+    </p>
+  </div>
+
+  <div class="about-process-grid">
+    <div class="about-process-card">
+      <span>01</span>
+      <h3>Inspect</h3>
+      <p>We analyze the area and identify the real path of water movement.</p>
+    </div>
+
+    <div class="about-process-card">
+      <span>02</span>
+      <h3>Repair</h3>
+      <p>We treat cracks, joints and damaged surfaces before waterproofing.</p>
+    </div>
+
+    <div class="about-process-card">
+      <span>03</span>
+      <h3>Protect</h3>
+      <p>We apply professional waterproofing systems for clean, durable protection.</p>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="about-cta-luxury">
+  <h2>Need a waterproofing inspection?</h2>
+  <p>Contact us and tell us about your leak, dampness, roof or terrace problem.</p>
+  <a href="contact.html" class="btn orange">Contact Us</a>
+</section> -->
+
+<div id="footer"></div>
+
+<script>
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+<script src="js/script.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

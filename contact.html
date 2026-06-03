@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | AF Waterproofing</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a class="logo" href="#">
+            <img src="./assets/aflogo.jpeg" alt="" class="logo-img">
+            <span>AF Waterproofing</span>
+        </a>
+        <!-- <a class="logo" href="#"><span class="logo-mark">AF</span><span>AF Waterproofing</span></a> -->
+        <button class="menu-btn">☰</button>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="Process.html">Process</a>
+            <a href="#projects">Projects</a>
+            <a href="contact.html">Contact Us</a>
+            <!-- <a class="quote-btn" href="#contact">Get A Quote</a> -->
+        </nav>
+    </header>
+
+<section class="contact-page" style="
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+">
+  <div class="contact-left">
+  <div style="display: flex;justify-content: center;font-size: 20px;padding: 18px;"><span class="contact-kicker">Contact Us</span></div>
+    
+    
+    <p>
+      Tell us about the problem and our team will contact you for a professional inspection.
+    </p>
+
+    <div class="contact-details">
+    <div>
+    <strong>WhatsApp</strong>
+
+    <a href="https://wa.me/96100000000" 
+       class="contact-link"
+       target="_blank">
+
+       +961 00 000 000
+
+    </a>
+</div>
+
+      <div>
+        <strong>Email</strong>
+        <span>info@afwaterproofing.com</span>
+      </div>
+
+      <div>
+        <strong>Location</strong>
+        <span>Lebanon — Residential & Commercial Projects</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="contact-card">
+    <h2>Request an Inspection</h2>
+    <p>Fill in the form and we will get back to you shortly.</p>
+
+    <form>
+      <div class="form-row">
+        <input type="text" placeholder="Full Name">
+        <input type="tel" placeholder="Phone Number">
+      </div>
+
+      <input type="email" placeholder="Email Address">
+
+      <select>
+        <option>Select Service</option>
+        <option>Leak Inspection</option>
+        <option>Concrete Crack Repair</option>
+        <option>Roof Waterproofing</option>
+        <option>Terrace Waterproofing</option>
+        <option>Swimming Pool Waterproofing</option>
+      </select>
+
+      <textarea placeholder="Describe the issue"></textarea>
+
+      <button type="submit">Send Request</button>
+    </form>
+  </div>
+</section> -->
+</section>
+    <div id="footer"></div>
+
+<script>
+fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+<script src="js/script.js"></script>
+ 
+</body>
+
+</html>

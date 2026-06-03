@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AF Waterproofing 3D Preview</title>
+  <style>
+    :root { --dark:#071827; --blue:#0877b9; --cyan:#00a6d6; --orange:#f28c28; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial, Helvetica, sans-serif; background:#071827; color:white; min-height:100vh; }
+    .hero { min-height:100vh; display:grid; grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr); align-items:center; gap:40px; padding:70px max(22px, calc((100vw - 1180px) / 2)); background:linear-gradient(90deg, rgba(7,24,39,.96), rgba(7,24,39,.74)); overflow:hidden; }
+    .copy { position:relative; z-index:2; }
+    h1 { font-size:clamp(42px, 6vw, 76px); line-height:1.04; font-weight:900; margin-bottom:18px; }
+    .sub { font-size:clamp(20px, 2.2vw, 28px); font-weight:800; margin-bottom:16px; color:#eaf8ff; }
+    p { max-width:610px; color:rgba(255,255,255,.84); font-size:18px; line-height:1.65; margin-bottom:28px; }
+    .actions { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn { padding:15px 24px; border-radius:999px; font-weight:900; text-decoration:none; color:white; }
+    .btn.blue { background:var(--blue); box-shadow:0 14px 28px rgba(8,119,185,.32); }
+    .btn.outline { border:2px solid rgba(255,255,255,.75); }
+    .visual { min-height:540px; height:66vh; max-height:720px; position:relative; border-radius:28px; overflow:hidden; background:radial-gradient(circle at 52% 42%, rgba(0,166,214,.22), transparent 42%); }
+    canvas { width:100%; height:100%; display:block; }
+    .badge { position:absolute; left:24px; bottom:24px; z-index:3; padding:14px 18px; border-radius:16px; background:rgba(255,255,255,.92); color:#071827; box-shadow:0 18px 42px rgba(0,0,0,.18); font-weight:900; }
+    @media(max-width:900px){ .hero{ grid-template-columns:1fr; padding-top:48px; } .visual{ min-height:420px; height:48vh; } }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <section class="copy">
+      <h1>Concrete Leak Repair &amp; Waterproofing</h1>
+      <div class="sub">A 3D waterproofing system animation for the hero.</div>
+      <p>This preview shows an animated concrete slab, glowing crack path, falling water drops, and a blue protective membrane spreading across the surface.</p>
+      <div class="actions"><a class="btn blue" href="#">Inspection</a><a class="btn outline" href="#">Our Services</a></div>
+    </section>
+    <section class="visual" aria-label="3D preview">
+      <canvas id="scene"></canvas>
+      <div class="badge">AF Waterproofing System</div>
+    </section>
+  </main>
+  <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
+  <script>
+    const canvas = document.getElementById('scene');
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x071827, 8, 18);
+
+    const camera = new THREE.PerspectiveCamera(42, 1, .1, 100);
+    camera.position.set(4.6, 4.2, 7.4);
+    camera.lookAt(0, .2, 0);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+    scene.add(new THREE.HemisphereLight(0xdff8ff, 0x071827, 2.5));
+    const key = new THREE.DirectionalLight(0xffffff, 2.6);
+    key.position.set(3, 6, 5);
+    key.castShadow = true;
+    scene.add(key);
+    const rim = new THREE.PointLight(0x00a6d6, 2.5, 12);
+    rim.position.set(-3, 2.4, 3);
+    scene.add(rim);
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    const concrete = new THREE.Mesh(
+      new THREE.BoxGeometry(5.4, .42, 3.4, 28, 2, 18),
+      new THREE.MeshStandardMaterial({ color:0xd7dde0, roughness:.82, metalness:.02 })
+    );
+    concrete.position.y = -.18;
+    concrete.castShadow = true;
+    concrete.receiveShadow = true;
+    group.add(concrete);
+
+    const membrane = new THREE.Mesh(
+      new THREE.BoxGeometry(5.05, .07, 3.05),
+      new THREE.MeshPhysicalMaterial({ color:0x0799d3, transparent:true, opacity:.74, roughness:.2, metalness:.05, clearcoat:.8 })
+    );
+    membrane.position.y = .08;
+    membrane.scale.x = .05;
+    membrane.castShadow = true;
+    group.add(membrane);
+
+    const crackPoints = [
+      new THREE.Vector3(-2.25,.16,-.85), new THREE.Vector3(-1.45,.18,-.28),
+      new THREE.Vector3(-.65,.17,-.54), new THREE.Vector3(.1,.18,.15),
+      new THREE.Vector3(.92,.17,-.08), new THREE.Vector3(1.55,.18,.6),
+      new THREE.Vector3(2.22,.17,.36)
+    ];
+    const crack = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(crackPoints),
+      new THREE.LineBasicMaterial({ color:0xff9f3d, transparent:true, opacity:.95 })
+    );
+    group.add(crack);
+
+    const seal = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints(crackPoints),
+      new THREE.LineBasicMaterial({ color:0x7be8ff, transparent:true, opacity:.75 })
+    );
+    seal.position.y = .035;
+    group.add(seal);
+
+    const drops = [];
+    const dropMat = new THREE.MeshPhysicalMaterial({ color:0x7ce7ff, transparent:true, opacity:.78, roughness:.08, transmission:.45, thickness:.5 });
+    for (let i = 0; i < 32; i++) {
+      const drop = new THREE.Mesh(new THREE.SphereGeometry(.045 + Math.random()*.035, 16, 16), dropMat);
+      drop.position.set((Math.random()-.5)*5.2, 1.2 + Math.random()*3.2, (Math.random()-.5)*3.2);
+      drop.userData.speed = .012 + Math.random()*.02;
+      drops.push(drop);
+      group.add(drop);
+    }
+
+    const rings = [];
+    const ringMat = new THREE.MeshBasicMaterial({ color:0x9ceeff, transparent:true, opacity:.32, side:THREE.DoubleSide });
+    for (let i=0; i<5; i++) {
+      const ring = new THREE.Mesh(new THREE.RingGeometry(.15, .17, 48), ringMat.clone());
+      ring.rotation.x = -Math.PI / 2;
+      ring.position.set(-2 + i, .135, -.8 + Math.sin(i)*.55);
+      ring.userData.phase = i * .8;
+      rings.push(ring);
+      group.add(ring);
+    }
+
+    const grid = new THREE.GridHelper(7, 24, 0x16495e, 0x0d2b3a);
+    grid.position.y = -.46;
+    grid.material.transparent = true;
+    grid.material.opacity = .28;
+    group.add(grid);
+
+    const resize = () => {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      renderer.setSize(rect.width, rect.height, false);
+      camera.aspect = rect.width / rect.height;
+      camera.updateProjectionMatrix();
+    };
+    window.addEventListener('resize', resize);
+    resize();
+
+    const clock = new THREE.Clock();
+    function animate(){
+      const t = clock.getElapsedTime();
+      group.rotation.y = Math.sin(t*.32) * .18;
+      group.rotation.x = -0.08 + Math.sin(t*.25) * .025;
+      membrane.scale.x = .08 + Math.abs(Math.sin(t*.55)) * .92;
+      membrane.position.x = -2.45 + membrane.scale.x * 2.45;
+      crack.material.opacity = .5 + Math.sin(t*3) * .28;
+      seal.material.opacity = .35 + Math.sin(t*2.2) * .28;
+      drops.forEach((drop, i) => {
+        drop.position.y -= drop.userData.speed;
+        drop.position.x += Math.sin(t + i) * .0018;
+        if (drop.position.y < .22) drop.position.y = 2.7 + Math.random()*1.7;
+      });
+      rings.forEach((ring) => {
+        const s = ((t + ring.userData.phase) % 2.2) / 2.2;
+        ring.scale.setScalar(.5 + s * 2.8);
+        ring.material.opacity = .25 * (1 - s);
+      });
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
