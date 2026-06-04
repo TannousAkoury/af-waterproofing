@@ -99,23 +99,23 @@
 
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = "900 180px Arial, Helvetica, sans-serif";
+    ctx.font = "900 165px Arial, Helvetica, sans-serif";
 
     // Soft glow behind the text
     ctx.shadowColor = "rgba(145, 239, 255, 0.95)";
     ctx.shadowBlur = 38;
     ctx.fillStyle = "rgba(255, 255, 255, 0.98)";
-    ctx.fillText("AFWATERPROOFING", textCanvas.width / 2, textCanvas.height / 2);
+    ctx.fillText("AF WATERPROOFING", textCanvas.width / 2, textCanvas.height / 2);
 
     // Blue stroke for waterproofing look
     ctx.shadowBlur = 0;
     ctx.lineWidth = 10;
     ctx.strokeStyle = "rgba(0, 166, 214, 0.95)";
-    ctx.strokeText("AFWATERPROOFING", textCanvas.width / 2, textCanvas.height / 2);
+    ctx.strokeText("AF WATERPROOFING", textCanvas.width / 2, textCanvas.height / 2);
 
     // Main white text again for clarity
     ctx.fillStyle = "rgba(255, 255, 255, 0.96)";
-    ctx.fillText("AFWATERPROOFING", textCanvas.width / 2, textCanvas.height / 2);
+    ctx.fillText("AF WATERPROOFING", textCanvas.width / 2, textCanvas.height / 2);
 
     const texture = new THREE.CanvasTexture(textCanvas);
     texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -418,21 +418,21 @@
   wallTextCtx.clearRect(0, 0, wallTextCanvas.width, wallTextCanvas.height);
   wallTextCtx.textAlign = "center";
   wallTextCtx.textBaseline = "middle";
-  wallTextCtx.font = "900 190px Arial, Helvetica, sans-serif";
+  wallTextCtx.font = "900 170px Arial, Helvetica, sans-serif";
   wallTextCtx.shadowColor = "rgba(255, 255, 255, 0.75)";
   wallTextCtx.shadowBlur = 16;
   wallTextCtx.fillStyle = "rgba(8, 119, 185, 0.95)";
-  wallTextCtx.fillText("AFWATERPROOFING", wallTextCanvas.width / 2, wallTextCanvas.height / 2);
+  wallTextCtx.fillText("AF WATERPROOFING", wallTextCanvas.width / 2, wallTextCanvas.height / 2);
   wallTextCtx.shadowBlur = 0;
   wallTextCtx.lineWidth = 8;
   wallTextCtx.strokeStyle = "rgba(145, 239, 255, 0.72)";
-  wallTextCtx.strokeText("AFWATERPROOFING", wallTextCanvas.width / 2, wallTextCanvas.height / 2);
+  wallTextCtx.strokeText("AF WATERPROOFING", wallTextCanvas.width / 2, wallTextCanvas.height / 2);
 
   const wallTextTexture = new THREE.CanvasTexture(wallTextCanvas);
   wallTextTexture.needsUpdate = true;
 
   const wallText = new THREE.Mesh(
-    new THREE.PlaneGeometry(2.68, 0.52),
+    new THREE.PlaneGeometry(3.05, 0.52),
     new THREE.MeshBasicMaterial({
       map: wallTextTexture,
       transparent: true,
@@ -550,11 +550,11 @@
   shirtCtx.clearRect(0, 0, shirtCanvas.width, shirtCanvas.height);
   shirtCtx.textAlign = "center";
   shirtCtx.textBaseline = "middle";
-  shirtCtx.font = "900 124px Arial, Helvetica, sans-serif";
+  shirtCtx.font = "900 104px Arial, Helvetica, sans-serif";
   shirtCtx.shadowColor = "rgba(0, 166, 214, 0.9)";
   shirtCtx.shadowBlur = 18;
   shirtCtx.fillStyle = "rgba(255, 255, 255, 0.98)";
-  shirtCtx.fillText("AFWATERPROOFING", shirtCanvas.width / 2, shirtCanvas.height / 2);
+  shirtCtx.fillText("AF WATERPROOFING", shirtCanvas.width / 2, shirtCanvas.height / 2);
 
   const shirtTexture = new THREE.CanvasTexture(shirtCanvas);
   shirtTexture.needsUpdate = true;

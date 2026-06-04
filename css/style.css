@@ -1175,9 +1175,9 @@ ul {
   }
 
   #leak-path-scene {
-    inset: 210px -190px -70px -145px;
+    inset: 135px -190px -70px -145px;
     width: calc(100% + 310px);
-    height: calc(100% - 140px);
+    height: calc(100% - 65px);
     opacity: 0.38;
   }
 
