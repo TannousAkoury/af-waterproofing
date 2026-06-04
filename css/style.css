@@ -876,6 +876,17 @@ ul {
     padding-bottom: 64px;
   }
 
+  .hero::after {
+    background:
+      linear-gradient(180deg, rgba(7, 24, 39, 0.58) 0%, rgba(7, 24, 39, 0.34) 44%, rgba(7, 24, 39, 0.72) 100%),
+      radial-gradient(circle at 58% 38%, rgba(0, 166, 214, 0.16), transparent 42%);
+  }
+
+  #waterproofing-scene {
+    opacity: 0.95;
+    filter: brightness(1.28) saturate(1.12);
+  }
+
   .logo {
     font-size: 18px;
   }
@@ -995,6 +1006,12 @@ ul {
     min-height: calc(100vh - 74px);
     padding-top: 48px;
     padding-bottom: 112px;
+  }
+
+  .hero::after {
+    background:
+      linear-gradient(180deg, rgba(7, 24, 39, 0.46) 0%, rgba(7, 24, 39, 0.22) 42%, rgba(7, 24, 39, 0.76) 100%),
+      radial-gradient(circle at 54% 34%, rgba(0, 166, 214, 0.16), transparent 44%);
   }
 
   .quick-services {

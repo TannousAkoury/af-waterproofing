@@ -245,11 +245,11 @@
     camera.aspect = rect.width / rect.height;
 
     if (rect.width < 760) {
-      camera.position.set(3.2, 6.2, 15.2);
-      world.position.set(0, -0.45, 0);
-      world.scale.setScalar(0.56);
+      camera.position.set(3.0, 5.9, 13.4);
+      world.position.set(0, -0.55, 0);
+      world.scale.setScalar(0.64);
 
-      waterText.scale.setScalar(0.72);
+      waterText.scale.setScalar(0.78);
     } else {
       camera.position.set(5.6, 4.6, 8.2);
       world.position.set(1.15, -0.45, 0);
