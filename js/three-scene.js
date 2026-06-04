@@ -698,16 +698,17 @@
     camera.aspect = rect.width / rect.height;
 
     if (rect.width < 760) {
-      camera.position.set(2.0, 2.9, 9.5);
-      world.position.set(0.72, -0.38, 0);
-      world.scale.setScalar(0.82);
+      camera.position.set(2.5, 3.25, 12.4);
+      world.position.set(0.15, -0.52, 0);
+      world.scale.setScalar(0.68);
+      camera.lookAt(0.25, 0.24, 0);
     } else {
       camera.position.set(5.2, 3.0, 8.6);
       world.position.set(2.1, -0.25, 0);
       world.scale.setScalar(1);
+      camera.lookAt(0.35, 0.15, 0);
     }
 
-    camera.lookAt(0.35, 0.15, 0);
     camera.updateProjectionMatrix();
   };
 

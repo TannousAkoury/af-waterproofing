@@ -1168,17 +1168,18 @@ ul {
   }
 
   .dark-band {
-    min-height: 680px;
+    min-height: auto;
     justify-content: flex-start;
-    padding-top: 72px;
-    padding-bottom: 120px;
+    padding-top: 750px;
+    padding-bottom: 72px;
   }
 
   #leak-path-scene {
-    inset: 135px -190px -70px -145px;
-    width: calc(100% + 310px);
-    height: calc(100% - 65px);
-    opacity: 0.38;
+    inset: 96px -150px auto -130px;
+    width: calc(100% + 280px);
+    height: 620px;
+    opacity: 0.96;
+    filter: brightness(1.35) saturate(1.18);
   }
 
   .dark-band::after {
@@ -1188,11 +1189,30 @@ ul {
     z-index: 1;
     pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(7, 24, 39, 0.98) 0%, rgba(7, 24, 39, 0.92) 42%, rgba(7, 24, 39, 0.58) 72%, rgba(7, 24, 39, 0.22) 100%);
+      linear-gradient(180deg, rgba(7, 24, 39, 0.02) 0%, rgba(7, 24, 39, 0.04) 58%, rgba(7, 24, 39, 0.72) 76%, rgba(7, 24, 39, 0.94) 100%);
   }
 
   .dark-band-content {
     width: 100%;
+    max-width: 100%;
+    position: static;
+  }
+
+  .dark-band .home-section-title {
+    position: absolute;
+    top: 36px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    justify-content: center;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .dark-band h4,
+  .dark-band .bullets {
+    position: relative;
+    z-index: 2;
   }
 
   .dark-band h3 {
@@ -1201,7 +1221,15 @@ ul {
 
   .dark-band h4 {
     font-size: clamp(18px, 5vw, 21px);
-    margin-bottom: 68px;
+    margin-bottom: 34px;
+  }
+
+  .dark-band .bullets li {
+    background: rgba(7, 24, 39, 0.32);
+    border-color: rgba(255, 255, 255, 0.18);
+    padding-left: 10px;
+    padding-right: 10px;
+    backdrop-filter: blur(3px);
   }
 }
 
