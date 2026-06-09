@@ -1,22 +1,30 @@
 
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector(".nav");
-const siteHeader = document.querySelector(".site-header");
+document.addEventListener("click", (event) => {
+	const menuBtn = event.target.closest(".menu-btn");
 
-if (menuBtn && nav) {
-	menuBtn.addEventListener("click", () => {
+	if (!menuBtn) {
+		return;
+	}
+
+	const siteHeader = menuBtn.closest(".site-header");
+	const nav = siteHeader ? siteHeader.querySelector(".nav") : document.querySelector(".nav");
+
+	if (nav) {
 		nav.classList.toggle("open");
-	});
-}
+	}
+});
 
-if (siteHeader) {
-	const updateHeaderState = () => {
+const updateHeaderState = () => {
+	const siteHeader = document.querySelector(".site-header");
+
+	if (siteHeader) {
 		siteHeader.classList.toggle("scrolled", window.scrollY > 12);
-	};
+	}
+};
 
-	updateHeaderState();
-	window.addEventListener("scroll", updateHeaderState, { passive: true });
-}
+updateHeaderState();
+document.addEventListener("afPartialsLoaded", updateHeaderState);
+window.addEventListener("scroll", updateHeaderState, { passive: true });
 
 // Scroll-reveal animations using IntersectionObserver
 (() => {

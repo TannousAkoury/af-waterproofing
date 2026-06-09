@@ -16,23 +16,7 @@
 <div>✉ info@afwaterproofing.com</div>
 <div>📍 Lebanon — Residential &amp; Commercial Projects</div>
 </div> -->
-    <header class="site-header">
-        <a class="logo" href="index.html">
-            <img src="./assets/aflogo.jpeg" alt="" class="logo-img">
-            <span>AF WATERPROOFING</span>
-        </a>
-        <!-- <a class="logo" href="#"><span class="logo-mark">AF</span><span>AF Waterproofing</span></a> -->
-        <button class="menu-btn">☰</button>
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="Process.html">Process</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact Us</a>
-            <!-- <a class="quote-btn" href="#contact">Get A Quote</a> -->
-        </nav>
-    </header>
+    <div id="navigation"></div>
     <section class="hero">
         <canvas id="waterproofing-scene" aria-hidden="true"></canvas>
         <div class="hero-copy">
@@ -189,14 +173,7 @@
     </section>
 <div id="footer"></div>
 
-<script>
-fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("footer").innerHTML = data;
-    });
-</script>
-
+<script src="js/includes.js"></script>
 <script src="js/script.js"></script>
 <script src="https://unpkg.com/three@0.160.1/build/three.min.js"></script>
 <script src="js/three-scene.js"></script>
