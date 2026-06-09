@@ -655,6 +655,16 @@ ul {
 
 /* Gallery */
 
+.projects-page-hero {
+  text-align: center;
+}
+
+.projects-page-intro {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1261,7 +1271,7 @@ ul {
 .contact-page {
   min-height: auto;
   padding: 40px max(20px, calc((100vw - var(--container)) / 2));
-  margin: 40px 0;
+  margin: 64px 0;
   background:
     radial-gradient(circle at top right, rgba(0, 166, 214, .16), transparent 32%),
     linear-gradient(135deg, #f7fbfd 0%, #ffffff 48%, #f7f6f1 100%);
@@ -1411,6 +1421,7 @@ ul {
     min-height: auto;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin: 48px 0;
 
   }
 
@@ -1423,6 +1434,7 @@ ul {
   .contact-page {
     padding-top: 40px;
     padding-bottom: 40px;
+    margin: 36px 0;
   }
 
   .contact-left p {
@@ -1926,6 +1938,7 @@ ul {
   min-height: 100vh;
   width: 100%;
   padding: 90px 20px;
+  margin: 64px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2034,6 +2047,7 @@ ul {
 @media (max-width: 900px) {
   .process-page {
     padding: 70px 18px;
+    margin: 48px 0;
     align-items: flex-start;
   }
 
@@ -2055,6 +2069,7 @@ ul {
 @media (max-width: 480px) {
   .process-page {
     padding: 55px 14px;
+    margin: 36px 0;
   }
 
   .section-head {

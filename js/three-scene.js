@@ -419,13 +419,13 @@
   wallTextCtx.textAlign = "center";
   wallTextCtx.textBaseline = "middle";
   wallTextCtx.font = "900 170px Arial, Helvetica, sans-serif";
-  wallTextCtx.shadowColor = "rgba(255, 255, 255, 0.75)";
-  wallTextCtx.shadowBlur = 16;
-  wallTextCtx.fillStyle = "rgba(8, 119, 185, 0.95)";
+  wallTextCtx.shadowColor = "rgba(0, 120, 210, 0.9)";
+  wallTextCtx.shadowBlur = 18;
+  wallTextCtx.fillStyle = "rgba(0, 48, 155, 0.98)";
   wallTextCtx.fillText("AF WATERPROOFING", wallTextCanvas.width / 2, wallTextCanvas.height / 2);
   wallTextCtx.shadowBlur = 0;
   wallTextCtx.lineWidth = 8;
-  wallTextCtx.strokeStyle = "rgba(145, 239, 255, 0.72)";
+  wallTextCtx.strokeStyle = "rgba(0, 145, 230, 0.92)";
   wallTextCtx.strokeText("AF WATERPROOFING", wallTextCanvas.width / 2, wallTextCanvas.height / 2);
 
   const wallTextTexture = new THREE.CanvasTexture(wallTextCanvas);
