@@ -671,11 +671,25 @@ ul {
   gap: 16px;
 }
 
+.gallery-item {
+  display: grid;
+  gap: 12px;
+}
+
 .gallery img {
+  width: 100%;
   height: 260px;
   object-fit: cover;
   border-radius: 14px;
   box-shadow: var(--shadow);
+}
+
+.gallery-item figcaption {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--orange);
+  font-weight: 900;
+  text-align: center;
 }
 
 .projects-scene .section-head {
@@ -935,9 +949,12 @@ ul {
 
   .services-grid,
   .process-grid,
-  .gallery,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stats-band {
