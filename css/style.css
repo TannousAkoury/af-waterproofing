@@ -1164,8 +1164,8 @@ ul {
 
 .solution-card {
   min-height: 250px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 252, 253, 0.98));
-  border: 1px solid rgba(8, 119, 185, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.64), rgba(249, 252, 253, 0.64));
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   padding: clamp(26px, 3vw, 34px);
   text-align: center;
@@ -2321,5 +2321,83 @@ ul {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+}
+.solutions-section {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.12)
+    ),
+    url("../assets/back.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #06162d;
+}
+
+/* Cards */
+.solution-card {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Card text */
+.solution-card h3 {
+  color: #06162d;
+}
+
+.solution-card p {
+  color: rgba(6, 22, 45, 0.95);
+}
+
+/* Section heading text */
+.solutions-head .home-section-title {
+  color: #ffb400;
+}
+
+.solutions-head p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Tablet and Mobile */
+@media (max-width: 768px) {
+  .solutions-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.14),
+        rgba(0, 0, 0, 0.14)
+      ),
+      url("../assets/backmobile.png") 40% center / cover no-repeat #06162d !important;
+    background-attachment: scroll !important;
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .solutions-head {
+    text-align: center;
+  }
+
+  .solution-card {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .solutions-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.14),
+        rgba(0, 0, 0, 0.14)
+      ),
+      url("../assets/backmobile.png") 80% center / cover no-repeat #06162d !important;
+    background-attachment: scroll !important;
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .solution-card {
+    background: rgba(255, 255, 255, 0.12);
   }
 }
