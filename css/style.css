@@ -710,7 +710,11 @@ ul {
 
 .projects-banner {
   display: block;
-  width: 100%;
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-width: none;
+  transform: translateX(-50%);
   padding: 32px 32px;
   background: linear-gradient(135deg, var(--blue), var(--navy));
   border-radius: 0;
@@ -719,7 +723,7 @@ ul {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: var(--shadow);
   cursor: pointer;
-  margin: 48px 0;
+  margin: 48px 0 0;
 }
 
 .projects-banner:hover {
@@ -2333,6 +2337,11 @@ ul {
   background-position: center center;
   background-repeat: no-repeat;
   background-color: #06162d;
+  min-height: 520px;
+}
+
+.solutions-head {
+  padding: clamp(18px, 2vw, 32px);
 }
 
 /* Cards */
@@ -2369,7 +2378,7 @@ ul {
         rgba(0, 0, 0, 0.14),
         rgba(0, 0, 0, 0.14)
       ),
-      url("../assets/backmobile.png") 40% center / cover no-repeat #06162d !important;
+      url("../assets/backmobile.png") 40% -10% / cover no-repeat #06162d !important;
     background-attachment: scroll !important;
     padding-top: 90px;
     padding-bottom: 90px;
@@ -2391,10 +2400,11 @@ ul {
         rgba(0, 0, 0, 0.14),
         rgba(0, 0, 0, 0.14)
       ),
-      url("../assets/backmobile.png") 80% center / cover no-repeat #06162d !important;
+      url("../assets/backmobile.png") 80% -18% / cover no-repeat #06162d !important;
     background-attachment: scroll !important;
     padding-top: 90px;
     padding-bottom: 90px;
+    min-height: 620px;
   }
 
   .solution-card {
