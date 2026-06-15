@@ -364,7 +364,7 @@ ul {
 /* Sections */
 
 .section {
-  padding-top: 88px;
+  /* padding-top: 88px; */
   padding-bottom: 88px;
 }
 
@@ -2378,7 +2378,28 @@ ul {
         rgba(0, 0, 0, 0.14),
         rgba(0, 0, 0, 0.14)
       ),
-      url("../assets/backmobile.png") 40% -10% / cover no-repeat #06162d !important;
+      url("../assets/backmobile.png") 80% -18% / cover no-repeat #06162d !important;
+    background-attachment: scroll !important;
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .solutions-head {
+    text-align: center;
+  }
+
+  .solution-card {
+    background: rgba(255, 255, 255, 0.65);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .solutions-section {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.14),
+        rgba(0, 0, 0, 0.14)
+      ),
+      url("../assets/backmobile.png") 80% -18% / cover no-repeat #06162d !important;
     background-attachment: scroll !important;
     padding-top: 90px;
     padding-bottom: 90px;
